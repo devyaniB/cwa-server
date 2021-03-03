@@ -45,6 +45,12 @@ services:
         trust-store-password: ${SSL_VERIFICATION_TRUSTSTORE_PASSWORD}
 
 spring:
+  security:
+    user:
+      name: ${ACTUATOR_USER_NAME}
+      password: ${ACTUATOR_USER_PASSWORD}
+      roles:
+        - ACTUATOR
   lifecycle:
     # keep in sync or lower than the kubernetes setting 'terminationGracePeriodSeconds'
     # 5s +5s Feign client + 20s DB timeout
