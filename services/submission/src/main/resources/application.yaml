@@ -43,6 +43,9 @@ services:
         key-store-password: ${SSL_SUBMISSION_KEYSTORE_PASSWORD}
         trust-store: ${SSL_VERIFICATION_TRUSTSTORE_PATH}
         trust-store-password: ${SSL_VERIFICATION_TRUSTSTORE_PASSWORD}
+  federation:
+    authentication-key: $(AUTHENTICATION_KEY:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)
+    authentication-country: $(AUTHENTICATION_KEY:C=DE)
 
 spring:
   lifecycle:
